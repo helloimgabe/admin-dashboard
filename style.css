@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 /*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
 /*
@@ -12,7 +13,7 @@ Use a better box model (opinionated).
 *,
 ::before,
 ::after {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /**
@@ -23,18 +24,22 @@ Use a better box model (opinionated).
 */
 
 html {
-	font-family:
-		system-ui,
-		'Segoe UI',
-		Roboto,
-		Helvetica,
-		Arial,
-		sans-serif,
-		'Apple Color Emoji',
-		'Segoe UI Emoji'; /* 1 */
-	line-height: 1.15; /* 2 */
-	-webkit-text-size-adjust: 100%; /* 3 */
-	tab-size: 4; /* 4 */
+    font-family:
+        "Roboto",
+        system-ui,
+        'Segoe UI',
+        Helvetica,
+        Arial,
+        sans-serif,
+        'Apple Color Emoji',
+        'Segoe UI Emoji';
+    /* 1 */
+    line-height: 1.15;
+    /* 2 */
+    -webkit-text-size-adjust: 100%;
+    /* 3 */
+    tab-size: 4;
+    /* 4 */
 }
 
 /*
@@ -47,7 +52,7 @@ Remove the margin in all browsers.
 */
 
 body {
-	margin: 0;
+    margin: 0;
 }
 
 /*
@@ -61,7 +66,7 @@ Add the correct font weight in Chrome and Safari.
 
 b,
 strong {
-	font-weight: bolder;
+    font-weight: bolder;
 }
 
 /**
@@ -73,14 +78,16 @@ code,
 kbd,
 samp,
 pre {
-	font-family:
-		ui-monospace,
-		SFMono-Regular,
-		Consolas,
-		'Liberation Mono',
-		Menlo,
-		monospace; /* 1 */
-	font-size: 1em; /* 2 */
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Consolas,
+        'Liberation Mono',
+        Menlo,
+        monospace;
+    /* 1 */
+    font-size: 1em;
+    /* 2 */
 }
 
 /**
@@ -88,7 +95,7 @@ Add the correct font size in all browsers.
 */
 
 small {
-	font-size: 80%;
+    font-size: 80%;
 }
 
 /**
@@ -97,18 +104,18 @@ Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
 
 sub,
 sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
 }
 
 sub {
-	bottom: -0.25em;
+    bottom: -0.25em;
 }
 
 sup {
-	top: -0.5em;
+    top: -0.5em;
 }
 
 /*
@@ -121,7 +128,7 @@ Correct table border color inheritance in Chrome and Safari. (https://issues.chr
 */
 
 table {
-	border-color: currentcolor;
+    border-color: currentcolor;
 }
 
 /*
@@ -139,10 +146,14 @@ input,
 optgroup,
 select,
 textarea {
-	font-family: inherit; /* 1 */
-	font-size: 100%; /* 1 */
-	line-height: 1.15; /* 1 */
-	margin: 0; /* 2 */
+    font-family: inherit;
+    /* 1 */
+    font-size: 100%;
+    /* 1 */
+    line-height: 1.15;
+    /* 1 */
+    margin: 0;
+    /* 2 */
 }
 
 /**
@@ -153,7 +164,7 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
-	-webkit-appearance: button;
+    -webkit-appearance: button;
 }
 
 /**
@@ -161,7 +172,7 @@ Remove the padding so developers are not caught out when they zero out 'fieldset
 */
 
 legend {
-	padding: 0;
+    padding: 0;
 }
 
 /**
@@ -169,7 +180,7 @@ Add the correct vertical alignment in Chrome and Firefox.
 */
 
 progress {
-	vertical-align: baseline;
+    vertical-align: baseline;
 }
 
 /**
@@ -178,7 +189,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
-	height: auto;
+    height: auto;
 }
 
 /**
@@ -187,8 +198,10 @@ Correct the cursor style of increment and decrement buttons in Safari.
 */
 
 [type='search'] {
-	-webkit-appearance: textfield; /* 1 */
-	outline-offset: -2px; /* 2 */
+    -webkit-appearance: textfield;
+    /* 1 */
+    outline-offset: -2px;
+    /* 2 */
 }
 
 /**
@@ -196,7 +209,7 @@ Remove the inner padding in Chrome and Safari on macOS.
 */
 
 ::-webkit-search-decoration {
-	-webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 /**
@@ -205,8 +218,10 @@ Remove the inner padding in Chrome and Safari on macOS.
 */
 
 ::-webkit-file-upload-button {
-	-webkit-appearance: button; /* 1 */
-	font: inherit; /* 2 */
+    -webkit-appearance: button;
+    /* 1 */
+    font: inherit;
+    /* 2 */
 }
 
 /*
@@ -219,5 +234,140 @@ Add the correct display in Chrome and Safari.
 */
 
 summary {
-	display: list-item;
+    display: list-item;
+}
+
+/* -------------------------------------------------------------------- */
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+        'sidebar header header header'
+        'sidebar main main aside'
+        'sidebar main main aside'
+        'sidebar main main aside'
+    ;
+}
+
+.container div {
+    padding: 15px;
+    font-size: 32px;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: white;
+}
+
+.header {
+    background-color: #979797;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-area: header;
+    text-align: start;
+}
+
+.searchHeader {
+    display: grid;
+}
+
+.menu ul,
+.menu li {
+    font-size: 16px;
+    display: grid;
+    text-align: center;
+    grid-auto-flow: column;
+}
+
+.menu li {
+    border: 2px solid dodgerblue;
+    border-radius: 20px;
+    width: 100px;
+    padding: 20px;
+    background-color: dodgerblue;
+    margin-right: 10px;
+}
+
+.sidebar {
+    background-color: #0195ff;
+    grid-area: sidebar;
+}
+
+.sidebar .side-content1,
+.sidebar .side-content2 {
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    font-weight: normal;
+    list-style: none;
+    line-height: 2;
+}
+
+.main {
+    background-color: #ebeff4;
+    gap: 15px;
+    grid-area: main;
+}
+
+.main-cards {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(
+        calc(100% / 3), 1fr));
+}
+
+.card {
+    border-left: 10px solid rgb(255, 188, 17);
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    width: 500px;
+    height: 250px;
+    box-shadow: 10px 10px 5px rgb(225, 224, 224);
+}
+
+.card .title {
+    color: black;
+    font-weight: 900;
+    font-size: 1.25rem;
+    margin-top: 25px;
+}
+
+.card p {
+    color: rgb(101, 98, 98);
+    font-weight: normal;
+    text-align: left;
+    font-size: 1rem;
+    max-inline-size: 45ch;
+    margin: 0px;
+}
+
+.title {
+    font-weight: 900;
+}
+
+.aside {
+    background-color: #ebeff4;
+    grid-area: aside;
+}
+
+.aside-card {
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    width: 400px;
+    height: 500px;
+    box-shadow: 10px 10px 5px rgb(225, 224, 224);
+}
+
+.aside-card .subtitle {
+    color: black;
+    font-size: 1.15rem;
+    font-weight: 900;
+}
+
+.aside-card p {
+    color: rgb(101, 98, 98);
+    font-size: 1rem;
+    max-inline-size: 40ch;
+    font-weight: normal;
+    padding-left: 30px;
+    margin: 0px;
 }
