@@ -42,6 +42,7 @@ html {
     /* 4 */
 }
 
+
 /*
 Sections
 ========
@@ -53,6 +54,7 @@ Remove the margin in all browsers.
 
 body {
     margin: 0;
+    height: 100vh;
 }
 
 /*
@@ -238,136 +240,132 @@ summary {
 }
 
 /* -------------------------------------------------------------------- */
-
-.container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-areas:
-        'sidebar header header header'
-        'sidebar main main aside'
-        'sidebar main main aside'
-        'sidebar main main aside'
-    ;
+ul,
+li {
+    list-style-type: none;
+    line-height: 3;
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
-.container div {
-    padding: 15px;
-    font-size: 32px;
-    font-family: Helvetica;
-    font-weight: bold;
-    color: white;
+.grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 150px 1fr;
+    grid-template-areas:
+        "side header"
+        "side main"
+    ;
+    height: inherit;
 }
 
 .header {
-    background-color: #979797;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    background-color: #ffffff;
     grid-area: header;
-    text-align: start;
-}
-
-.searchHeader {
+    box-shadow: 20px 20px 5px rgb(225, 224, 224);
     display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
-.menu ul,
-.menu li {
-    font-size: 16px;
-    display: grid;
-    text-align: center;
-    grid-auto-flow: column;
+.flex-row-1 {
+    display: flex;
+    justify-content: space-around;
 }
 
-.menu li {
-    border: 2px solid dodgerblue;
-    border-radius: 20px;
-    width: 100px;
-    padding: 20px;
-    background-color: dodgerblue;
-    margin-right: 10px;
+.flex-row-2 {
+    display: flex;
+}
+
+.header input {
+    width: 50%;
+    background-color: rgb(242, 239, 236);
+    border: none;
+    border-radius: 30px;
+    height: 50%;
+    justify-self: center;
+    align-self: center;
 }
 
 .sidebar {
-    background-color: #0195ff;
-    grid-area: sidebar;
+    background-color: dodgerblue;
+    grid-area: side;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 75px 0.5fr 1fr;
+    color: white;
+    align-items: start;
 }
 
-.sidebar .side-content1,
-.sidebar .side-content2 {
-    color: rgb(255, 255, 255);
-    font-size: 1.5rem;
-    font-weight: normal;
-    list-style: none;
-    line-height: 2;
-}
 
 .main {
-    background-color: #ebeff4;
-    gap: 15px;
+    background-color: #f4f4f4;
     grid-area: main;
-}
-
-.main-cards {
     display: grid;
-    gap: 3rem;
-    grid-template-columns: repeat(auto-fit, minmax(
-        calc(100% / 3), 1fr));
+    grid-template-columns: 1fr 1fr 3fr;
+    grid-template-areas:
+        "c1 c2 c3"
+        "c4 c5 c3"
+        "c6 c7 c8"
+    ;
+    gap: 30px;
+    padding: 100px 0px 100px 30px;
 }
 
 .card {
     border-left: 10px solid rgb(255, 188, 17);
     border-radius: 10px;
     background-color: #FFFFFF;
-    width: 500px;
-    height: 250px;
     box-shadow: 10px 10px 5px rgb(225, 224, 224);
+    padding: 50px 20px 0px 20px;;
 }
 
-.card .title {
-    color: black;
-    font-weight: 900;
-    font-size: 1.25rem;
-    margin-top: 25px;
+.subtitle {
+    font-size: 1.25rem !important;
+    font-weight: 600;
+    color: rgb(51, 51, 51) !important;
 }
 
 .card p {
-    color: rgb(101, 98, 98);
-    font-weight: normal;
-    text-align: left;
-    font-size: 1rem;
     max-inline-size: 45ch;
-    margin: 0px;
-}
-
-.title {
-    font-weight: 900;
-}
-
-.aside {
-    background-color: #ebeff4;
-    grid-area: aside;
-}
-
-.aside-card {
-    border-radius: 10px;
-    background-color: #FFFFFF;
-    width: 400px;
-    height: 500px;
-    box-shadow: 10px 10px 5px rgb(225, 224, 224);
-}
-
-.aside-card .subtitle {
-    color: black;
-    font-size: 1.15rem;
-    font-weight: 900;
-}
-
-.aside-card p {
-    color: rgb(101, 98, 98);
     font-size: 1rem;
-    max-inline-size: 40ch;
-    font-weight: normal;
-    padding-left: 30px;
-    margin: 0px;
+    color: #525252;
+    margin: 0;
+}
+
+
+.card:nth-child(1) {
+    grid-area: c1;
+}
+
+.card:nth-child(2) {
+    grid-area: c2;
+}
+
+.card:nth-child(3) {
+    grid-area: c3;
+    /* height: 65%; */
+}
+
+.card:nth-child(4) {
+    grid-area: c4;
+}
+
+.card:nth-child(5) {
+    grid-area: c5;
+}
+
+.card:nth-child(6) {
+    grid-area: c6;
+}
+
+.card:nth-child(7) {
+    grid-area: c7;
+}
+
+.card:nth-child(8) {
+    /* margin-top: 14rem; */
+    grid-area: c8;
+    /* height: 65%;
+    grid-row: 2 / 4; */
 }
