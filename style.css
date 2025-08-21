@@ -239,15 +239,9 @@ summary {
     display: list-item;
 }
 
-/* -------------------------------------------------------------------- */
-ul,
-li {
-    list-style-type: none;
-    line-height: 3;
-    font-weight: 600;
-    font-size: 1.2rem;
-}
+/* ----------------------------------------------------------------------------------------------------------- */
 
+/* MAIN WEBPAGE GRID */
 .grid {
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -258,7 +252,138 @@ li {
     ;
     height: inherit;
 }
+/* ----------------------------------------------------------------------------------------------------------- */
 
+/* SIDEBAR CSS */
+.sidebar {
+    background-color: dodgerblue;
+    grid-area: side;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 75px 0.5fr 1fr;
+    color: white;
+    align-items: center;
+    justify-items: start;
+}
+
+ul,
+li,
+a {
+    list-style-type: none;
+    text-decoration: none;
+    line-height: 3;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: black; /* <- COLOR TEXT IS INVERTED IN EACH CLASS:NTH-CHILD AND DASH USING -WEBKIT-FILTER*/
+}
+
+.dash {
+    background-image: url(./icons/sidebar_icons/dashboard.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 2.5rem;
+    text-align: left;
+    -webkit-filter: invert(100%);
+    padding-left: 60px;
+}
+
+.sidelinks:nth-child(1){
+    background-image: url(./icons/sidebar_icons/home.svg);
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: 2rem;
+    text-align: left;
+    -webkit-filter: invert(100%);
+    padding-left: 60px;
+}
+
+.sidelinks:nth-child(2){
+    background-image: url(./icons/sidebar_icons/profile.svg);
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: 2rem;
+    text-align: left;
+    -webkit-filter: invert(100%);
+    padding-left: 60px;
+}
+
+.sidelinks:nth-child(3){
+    background-image: url(./icons/sidebar_icons/messages.svg);
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: 2rem;
+    text-align: left;
+    -webkit-filter: invert(100%);
+    padding-left: 60px;
+    
+}
+
+.sidelinks:nth-child(4){
+    background-image: url(./icons/sidebar_icons/history.svg);
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: 2rem;
+    text-align: left;
+    -webkit-filter: invert(100%);
+    padding-left: 60px;
+}
+
+.sidelinks:nth-child(5){
+    background-image: url(./icons/sidebar_icons/tasks.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 2rem;
+    text-align: left;
+    -webkit-filter: invert(100%);
+    padding-left: 60px;
+}
+
+.sidelinks:nth-child(6){
+    background-image: url(./icons/sidebar_icons/communities.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 2rem;
+    text-align: left;
+    -webkit-filter: invert(100%);
+    padding-left: 60px;
+}
+
+.sidelinks2:nth-child(1){
+    background-image: url(./icons/sidebar_icons/settings.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 2rem;
+    text-align: left;
+    -webkit-filter: invert(100%);
+    padding-left: 60px;
+    align-self: start;
+}
+
+.sidelinks2:nth-child(2){
+    background-image: url(./icons/sidebar_icons/support.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 2rem;
+    text-align: left;
+    -webkit-filter: invert(100%);
+    padding-left: 60px;
+}
+
+.sidelinks2:nth-child(3){
+    background-image: url(./icons/sidebar_icons/privacy.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 2rem;
+    text-align: left;
+    -webkit-filter: invert(100%);
+    padding-left: 60px;
+}
+.sidebar ul:nth-child(3) {
+    align-self: start;
+}
+/* ----------------------------------------------------------------------------------------------------------- */
+
+/* HEADER CSS */
 .header {
     background-color: #ffffff;
     grid-area: header;
@@ -268,13 +393,33 @@ li {
     grid-template-rows: 1fr 1fr;
 }
 
-.flex-row-1 {
+.header-row-1 {
     display: flex;
-    justify-content: space-around;
 }
 
-.flex-row-2 {
+.header-row-2 {
     display: flex;
+    border: solid 2px red;
+}
+
+.header-row-2 .welcome-flex {
+    border: solid 2px chartreuse;
+}
+
+.header-row-2 .button-flex {
+    border: solid 2px blue;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.header-row-2 .button-flex button {
+    background-color: dodgerblue;
+    color: white;
+    border-style: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    padding: 8px 20px;
+    margin: 12px;
 }
 
 .header input {
@@ -287,17 +432,9 @@ li {
     align-self: center;
 }
 
-.sidebar {
-    background-color: dodgerblue;
-    grid-area: side;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 75px 0.5fr 1fr;
-    color: white;
-    align-items: start;
-}
+/* ----------------------------------------------------------------------------------------------------------- */
 
-
+/* MAIN CSS */
 .main {
     background-color: #f4f4f4;
     grid-area: main;
@@ -317,7 +454,8 @@ li {
     border-radius: 10px;
     background-color: #FFFFFF;
     box-shadow: 10px 10px 5px rgb(225, 224, 224);
-    padding: 50px 20px 0px 20px;;
+    padding: 50px 20px 0px 20px;
+    ;
 }
 
 .subtitle {
