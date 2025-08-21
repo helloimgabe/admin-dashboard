@@ -245,12 +245,13 @@ summary {
 .grid {
     display: grid;
     grid-template-columns: 300px 1fr;
-    grid-template-rows: 150px 1fr;
+    grid-template-rows: 190px 1fr;
     grid-template-areas:
         "side header"
         "side main"
     ;
     height: inherit;
+    width: inherit;
 }
 /* ----------------------------------------------------------------------------------------------------------- */
 
@@ -387,30 +388,119 @@ a {
 .header {
     background-color: #ffffff;
     grid-area: header;
-    box-shadow: 20px 20px 5px rgb(225, 224, 224);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+    box-shadow: 3px 10px 10px rgb(224, 229, 233);
+    z-index: 1;
 }
 
 .header-row-1 {
     display: flex;
+    justify-content: space-evenly;
+}
+
+.search-row-1 {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding: 0px 0px 10px 50px;
+  border-radius: 100px;
+  color: black;
+  font-weight: 600;
+}
+
+.magnify-icon {
+  margin-right: 20px;
+  display: block;
+  height: 25px;
+  width: 25px;
+}
+
+.searchbar {
+    background-color: rgb(227, 234, 238);
+    border: none;
+    border-radius: 30px;
+    height: 50%;
+    flex: 1;
+    justify-self: center;
+    align-self: center;
+}
+
+.image-row-1 {
+  margin-right: 20px;
+  display: block;
+  height: 25px;
+  width: 25px;
+}
+
+.profile-row-1 {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: end;
+  padding: 0px 0px 10px 50px;
+  border-radius: 100px;
+  color: black;
+  font-weight: 600;
+  margin-right: 50px;
+}
+
+.image-row-1 {
+  margin-right: 30px;
+  display: block;
+  height: 25px;
+  width: 25px;
+}
+
+.profile-image-row-1 {
+  margin-right: 30px;
+  display: block;
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+}
+
+.name-row-1 {
+  font-size: 1rem;
 }
 
 .header-row-2 {
     display: flex;
-    border: solid 2px red;
+    justify-content: space-between;
 }
 
-.header-row-2 .welcome-flex {
-    border: solid 2px chartreuse;
+.profile-row-2 {
+  display: flex;
+  align-items: center;
+  padding: 0px 0px 10px 50px;
+  border-radius: 100px;
+  color: black;
+  font-weight: 600;
+  flex: 1;
+}
+
+.image-row-2 {
+  margin-right: 20px;
+  display: block;
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+}
+
+.greet-row-2 {
+  font-size: 0.85rem;
+}
+
+.name-row-2 {
+  font-size: 1.5rem;
 }
 
 .header-row-2 .button-flex {
-    border: solid 2px blue;
     display: flex;
     align-items: center;
     justify-content: end;
+    flex: 1;
 }
 .header-row-2 .button-flex button {
     background-color: dodgerblue;
@@ -419,17 +509,11 @@ a {
     border-radius: 20px;
     font-size: 1rem;
     padding: 8px 20px;
-    margin: 12px;
-}
+    margin-right: 50px;
 
-.header input {
-    width: 50%;
-    background-color: rgb(242, 239, 236);
-    border: none;
-    border-radius: 30px;
-    height: 50%;
-    justify-self: center;
-    align-self: center;
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 /* ----------------------------------------------------------------------------------------------------------- */
