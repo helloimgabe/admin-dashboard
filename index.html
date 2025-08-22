@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>The Odin Project: Admin Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -20,7 +20,7 @@
                 </div>
                 <div class="profile-row-1">
                     <img class="image-row-1" alt="notification bell icon" src="./icons/header_icons/notification.svg" />
-                    <img class="profile-image-row-1" alt="profile image" src="./icons/global_icons/3500_7_07.jpg" />
+                    <img class="profile-image-row-1" alt="profile image" src="./icons/global_icons/cat.jpg" />
                     <div>
                         <div class="name-row-1">Morgan Oakley</div>
                     </div>
@@ -28,7 +28,7 @@
             </div>
             <div class="header-row-2">
                 <div class="profile-row-2">
-                    <img class="image-row-2" alt="profile image" src="./icons/global_icons/3500_7_07.jpg" />
+                    <img class="image-row-2" alt="profile image" src="./icons/global_icons/cat.jpg" />
                     <div>
                         <div class="greet-row-2">Hi there,</div>
                         <div class="name-row-2">Morgan Oakley (@morgan)</div>
@@ -43,32 +43,33 @@
         </header>
 
         <section class="sidebar">
-            <ul>
+            <ul class="dash-title">
                 <li>
                     <h2 class="dash">Dashboard</h2>
                 </li>
             </ul>
-            <ul>
-                <li class="sidelinks"><a href="index.html">Home</a></li>
-                <li class="sidelinks"><a href="index.html">Profile</a></li>
-                <li class="sidelinks"><a href="index.html">Messages</a></li>
-                <li class="sidelinks"><a href="index.html">History</a></li>
-                <li class="sidelinks"><a href="index.html">Tasks</a></li>
-                <li class="sidelinks"><a href="index.html">Communities</a></li>
+            <ul class="nav-section1">
+                <li class="nav-item home-link"><a href="index.html">Home</a></li>
+                <li class="nav-item profile-link"><a href="index.html">Profile</a></li>
+                <li class="nav-item messages-link"><a href="index.html">Messages</a></li>
+                <li class="nav-item history-link"><a href="index.html">History</a></li>
+                <li class="nav-item tasks-link"><a href="index.html">Tasks</a></li>
+                <li class="nav-item communities-link"><a href="index.html">Communities</a></li>
             </ul>
-            <ul>
-                <li class="sidelinks2"><a href="index.html">Settings</a></li>
-                <li class="sidelinks2"><a href="index.html">Support</a></li>
-                <li class="sidelinks2"><a href="index.html">Privacy</a></li>
+            <ul class="nav-section2">
+                <li class="nav-item settings-link"><a href="index.html">Settings</a></li>
+                <li class="nav-item support-link"><a href="index.html">Support</a></li>
+                <li class="nav-item privacy-link"><a href="index.html">Privacy</a></li>
             </ul>
         </section>
 
         <main class="main">
             <section class="your-projects">
-                <div class="pro-title">
+                <div class="project-title">
                     <p>Your Projects</p>
                 </div>
-                <div class="card" id="c1">
+                <div></div> <!-- this div is empty on purpose to take space in the grid. -->
+                <div class="card project" id="c1">
                     <p class="subtitle">Super Cool Project</p>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, provident! Optio neque delectus
                         tenetur
@@ -90,7 +91,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" id="c2">
+                <div class="card project" id="c2">
                     <p class="subtitle">Less Cool Project</p>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, provident! Optio neque delectus
                         tenetur
@@ -112,7 +113,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" id="c3">
+                <div class="card project" id="c3">
                     <p class="subtitle">Impossible App</p>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, provident! Optio neque delectus
                         tenetur
@@ -134,7 +135,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" id="c4">
+                <div class="card project" id="c4">
                     <p class="subtitle">Easy Peasy App</p>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, provident! Optio neque delectus
                         tenetur
@@ -156,7 +157,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" id="c5">
+                <div class="card project" id="c5">
                     <p class="subtitle">Ad Blocker</p>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, provident! Optio neque delectus
                         tenetur
@@ -178,7 +179,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" id="c6">
+                <div class="card project" id="c6">
                     <p class="subtitle">Money Maker</p>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, provident! Optio neque delectus
                         tenetur
@@ -202,7 +203,7 @@
                 </div>
             </section>
 
-            <section class="announce-trend">
+            <section class="announce">
                 <div class="ann-title">
                     <p>Announcements</p>
                 </div>
@@ -225,43 +226,44 @@
                         </div>
                     </div>
                 </div>
+            </section>
+            <section class="trend">
                 <div class="trend-title">
                     <p>Trending</p>
                 </div>
                 <div class="card trend">
-                    <div class="trend-container">
-                        <div class="trend-user">
-                            <img class="user-pfp" alt="profile image" src="./icons/global_icons/3500_7_07.jpg" />
-                            <div>
-                                <div class="username">@tegan</div>
-                                <div class="subtitle">World Peace Builder</div>
-                            </div>
+                    <div class="trend-user">
+                        <img class="user-pfp" alt="profile image" src="./icons/global_icons/sloth.jpg" />
+                        <div class="user-chip">
+                            <div class="username">@tegan</div>
+                            <div class="subtitle">World Peace Builder</div>
                         </div>
-                        <div class="trend-user">
-                            <img class="user-pfp" alt="profile image" src="./icons/global_icons/3500_7_07.jpg" />
-                            <div>
-                                <div class="username">@morgan</div>
-                                <div class="subtitle">Super Cool Project</div>
-                            </div>
+                    </div>
+                    <div class="trend-user">
+                        <img class="user-pfp" alt="profile image" src="./icons/global_icons/cat.jpg" />
+                        <div class="user-chip">
+                            <div class="username">@morgan</div>
+                            <div class="subtitle">Super Cool Project</div>
                         </div>
-                        <div class="trend-user">
-                            <img class="user-pfp" alt="profile image" src="./icons/global_icons/3500_7_07.jpg" />
-                            <div>
-                                <div class="username">@kendall</div>
-                                <div class="subtitle">Life Changing App</div>
-                            </div>
+                    </div>
+                    <div class="trend-user">
+                        <img class="user-pfp" alt="profile image" src="./icons/global_icons/alligator.jpg" />
+                        <div class="user-chip">
+                            <div class="username">@kendall</div>
+                            <div class="subtitle">Life Changing App</div>
                         </div>
-                        <div class="trend-user">
-                            <img class="user-pfp" alt="profile image" src="./icons/global_icons/3500_7_07.jpg" />
-                            <div>
-                                <div class="username">@alex</div>
-                                <div class="subtitle">No Traffic Maker</div>
-                            </div>
+                    </div>
+                    <div class="trend-user">
+                        <img class="user-pfp" alt="profile image" src="./icons/global_icons/dog.jpg" />
+                        <div class="user-chip">
+                            <div class="username">@alex</div>
+                            <div class="subtitle">No Traffic Maker</div>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
+
     </div>
 
 </body>
