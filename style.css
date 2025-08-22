@@ -245,8 +245,8 @@ summary {
 /* MAIN WEBPAGE GRID */
 .grid {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    grid-template-rows: 190px 1fr;
+    grid-template-columns: minmax(230px, 1fr) 8fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas:
         "side header"
         "side main"
@@ -263,21 +263,16 @@ summary {
     grid-area: side;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 75px 0.5fr 1fr;
+    grid-template-rows: 0.5fr 1fr 5fr;
     color: white;
     align-items: center;
     justify-items: start;
 }
 
-ul,
-li,
-a {
-    list-style-type: none;
-    text-decoration: none;
-    line-height: 3;
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: black; /* <- COLOR TEXT IS INVERTED IN EACH CLASS:NTH-CHILD AND DASH USING -WEBKIT-FILTER*/
+.dash-title {
+    color: black;
+    -webkit-filter: invert(100%);
+    list-style: none;
 }
 
 .dash {
@@ -286,103 +281,67 @@ a {
     background-position: left;
     background-size: 2.5rem;
     text-align: left;
+    padding: 5px 0px 5px 60px;
+}
+
+.nav-item {
+    list-style-type: none;
+    line-height: 3;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: black;
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: 2rem;
+    text-align: left;
     -webkit-filter: invert(100%);
     padding-left: 60px;
 }
 
-.sidelinks:nth-child(1) {
+.nav-item>a {
+    text-decoration: none;
+    color: black;
+}
+
+.home-link {
     background-image: url(./icons/sidebar_icons/home.svg);
-    background-repeat: no-repeat;
-    background-position: center left;
-    background-size: 2rem;
-    text-align: left;
-    -webkit-filter: invert(100%);
-    padding-left: 60px;
 }
 
-.sidelinks:nth-child(2) {
+.profile-link {
     background-image: url(./icons/sidebar_icons/profile.svg);
-    background-repeat: no-repeat;
-    background-position: center left;
-    background-size: 2rem;
-    text-align: left;
-    -webkit-filter: invert(100%);
-    padding-left: 60px;
 }
 
-.sidelinks:nth-child(3) {
+.messages-link {
     background-image: url(./icons/sidebar_icons/messages.svg);
-    background-repeat: no-repeat;
-    background-position: center left;
-    background-size: 2rem;
-    text-align: left;
-    -webkit-filter: invert(100%);
-    padding-left: 60px;
 
 }
 
-.sidelinks:nth-child(4) {
+.history-link {
     background-image: url(./icons/sidebar_icons/history.svg);
-    background-repeat: no-repeat;
-    background-position: center left;
-    background-size: 2rem;
-    text-align: left;
-    -webkit-filter: invert(100%);
-    padding-left: 60px;
 }
 
-.sidelinks:nth-child(5) {
+.tasks-link {
     background-image: url(./icons/sidebar_icons/tasks.svg);
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: 2rem;
-    text-align: left;
-    -webkit-filter: invert(100%);
-    padding-left: 60px;
 }
 
-.sidelinks:nth-child(6) {
+.communities-link {
     background-image: url(./icons/sidebar_icons/communities.svg);
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: 2rem;
-    text-align: left;
-    -webkit-filter: invert(100%);
-    padding-left: 60px;
 }
 
-.sidelinks2:nth-child(1) {
+.settings-link {
     background-image: url(./icons/sidebar_icons/settings.svg);
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: 2rem;
-    text-align: left;
-    -webkit-filter: invert(100%);
-    padding-left: 60px;
     align-self: start;
 }
 
-.sidelinks2:nth-child(2) {
+.support-link {
     background-image: url(./icons/sidebar_icons/support.svg);
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: 2rem;
-    text-align: left;
-    -webkit-filter: invert(100%);
-    padding-left: 60px;
 }
 
-.sidelinks2:nth-child(3) {
+.privacy-link {
     background-image: url(./icons/sidebar_icons/privacy.svg);
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: 2rem;
-    text-align: left;
-    -webkit-filter: invert(100%);
-    padding-left: 60px;
 }
 
-.sidebar ul:nth-child(3) {
+.nav-section2 {
     align-self: start;
 }
 
@@ -530,60 +489,60 @@ a {
     background-color: #f4f4f4;
     grid-area: main;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas:
-        "your-p announce"
-        "your-p trend"
+        "your-p your-p announce"
+        "your-p your-p trend"
     ;
-    padding: 75px 0px 80px 30px;
-    max-width: inherit;
+    padding: 10px 0px 80px 20px;
 }
 
-.your-projects {
+.card.project {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 10px 1fr 1fr 1fr;
-    grid-template-areas:
-        "title title"
-        "c1 c2"
-        "c3 c4"
-        "c5 c6"
-    ;
-    grid-area: your-p;
-    gap: 50px;
-    margin-top: -75px;
-}
-
-.card {
+    grid-template-columns: 1fr;
     border-left: 10px solid rgb(255, 188, 17);
     border-radius: 10px;
     background-color: #FFFFFF;
     box-shadow: 10px 10px 5px rgb(225, 224, 224);
     padding: 50px 20px 0px 20px;
-    max-width: max-content;
-    display: grid;
-    grid-template-columns:1fr;
-    grid-template-rows: 26px 1fr 1fr;
+
+    &:hover {
+        box-shadow: 10px 10px 5px rgb(179, 177, 162);
+    }
 }
 
-.card p {
-    max-inline-size: 45ch;
-    font-size: 1rem;
+.your-projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 3fr 3fr 3fr;
+    grid-auto-flow: dense;
+    grid-area: your-p;
+    gap: 35px;
+    margin-right: 20px;
+}
+
+.card.project p {
+    max-inline-size: 55ch;
     color: #525252;
     margin: 0;
+    font-weight: 400;
+    font-size: clamp(1rem, 1.25rem, 1.66rem);
 }
 
-.card > .subtitle {
+.card.project>.subtitle {
     color: #000000;
     font-weight: 600;
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 1.5rem, 1.75rem);
 }
 
-.pro-title {
-    font-size: 1.5rem;
+.project-title {
+    font-size: clamp(1rem, 1.75rem, 2.2rem);
+    align-self: end;
+    margin-bottom: -50px
 }
-.icon-container{
+
+.icon-container {
     display: flex;
     justify-content: end;
     align-items: end;
@@ -597,101 +556,110 @@ a {
     width: 30px;
 }
 
-#c1 {
-    grid-area: c1;
-}
+/* ----------------------------------------------------------------------------------------------------------- */
 
-#c2 {
-    grid-area: c2;
-}
-
-#c3 {
-    grid-area: c3;
-}
-
-#c4 {
-    grid-area: c4;
-}
-
-#c5 {
-    grid-area: c5;
-}
-
-#c6 {
-    grid-area: c6;
-}
-
-.announce-trend {
+/* ANNOUNCEMENT SECTION */
+.announce {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 75px 1fr 75px 1fr;
+    grid-template-rows: 25% 1fr;
     grid-area: announce;
     grid-template-areas:
         "announce-title"
         "announce-card"
-        "trend-title"
-        "trend-card"
     ;
-    padding: 10px;
-    max-width: fit-content;
-}
-
-.card.trend {
-    grid-area: trend-card;
-    max-width: fit-content;
-}
-
-.trend-container {
-    padding: 20px 0px 0px 15px;
-    line-height: 1.3;
+    margin-right: 10px;
 }
 
 .ann-title {
     grid-area: announce-title;
-    font-size: 1.5rem;
-    margin-top: 18px;
+    font-size: 1.75rem;
+    align-self: end;
+    margin-bottom: -15px;
 }
 
-.trend-title {
-    grid-area: trend-title;
-    font-size: 1.5rem;
-    margin-top: 18px;
-}
+.card.announce {
+    grid-area: announce-card;
+    padding: 0;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 10px 10px 5px rgb(225, 224, 224);
+    padding: 10px;
 
-.announce-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    max-inline-size: 45ch;
+    &:hover {
+        box-shadow: 10px 10px 5px rgb(179, 177, 162);
+    }
 }
 
 .nested-card:nth-child(1),
 .nested-card:nth-child(2) {
     border-bottom: 1px solid #ccc;
+    padding: 0px 5px 10px 5px;
 }
 
 .announce-subtitle {
-    font-weight: 900;
+    font-weight: 700;
     color: rgb(0, 0, 0);
-    margin-bottom: 5px;
 }
 
-.card.trend,
-.card.announce {
-    max-width: 300px;
-    padding: 0;
+.nested-card > p {
+    font-weight: 400;
+    color: #525252;
+}
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+/* TREND SECTION */
+.trend {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% 1fr;
+    grid-area: trend;
+    grid-template-areas:
+        "trend-title"
+        "trend-card"
+    ;
+    align-items: end;
+    margin-right: 10px;
+}
+
+.trend-title {
+    grid-area: trend-title;
+    font-size: 1.5rem;
+    margin-bottom: -25px;
+}
+
+.card.trend {
+    grid-area: trend-card;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 10px 10px 5px rgb(225, 224, 224);
+
+    &:hover {
+        box-shadow: 10px 10px 5px rgb(179, 177, 162);
+    }
 }
 
 .trend-user {
     display: flex;
     align-items: center;
-    padding: 0px 0px 10px 50px;
+    margin: 12px 0px 0px 5px;
+    padding: 10px 0px 10px 50px;
     border-radius: 100px;
     color: black;
     font-weight: 400;
-    flex: 1;
-    padding: 12px;
-    justify-items: center;
+    padding: 10px
+}
+
+.user-chip>.username {
+    color: black;
+    font-size: 1.15rem;
+}
+
+.user-chip>.subtitle {
+    color: #525252;
+    font-size: 1.15rem;
 }
 
 .user-pfp {
